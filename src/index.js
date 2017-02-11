@@ -1,6 +1,8 @@
 'use strict';
+
 var Alexa = require("alexa-sdk");
-var responses = require("./responses");
+var responses = require("./chapter1/responses");
+var cards = require("./chapter1/cards");
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
@@ -10,6 +12,15 @@ exports.handler = function(event, context, callback) {
 
 var handlers = {
     'LaunchRequest': function () {
-        this.emit(':askWithCard', responses.intro, responses.reprompt, "The journey begins", "Brains still turn your stomach you are doing ok so far.");
+        console.log('LaunchRequest');
+        this.emit(':askWithCard', responses.intro, responses.reprompt, cards.start.title, cards.start.content);
+    },
+    'ExitRoomIntent': function () {
+        console.log('ExitRoomIntent');
+        this.emit(':tell', responses.notImplemented);
+    },
+    'Unhandled': function() {
+        console.log('UnhandledIntent');
+        this.emit(':tell', 'Something when wrong');
     }
 };

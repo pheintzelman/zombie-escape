@@ -6,4 +6,6 @@ responses.intro = "You awake in your friend's apartment to strange gutteral soun
 
 responses.reprompt = "What do you do?"
 
+responses.notImplemented = "Nice try but that isn't working yet."
+
 module.exports = responses;
