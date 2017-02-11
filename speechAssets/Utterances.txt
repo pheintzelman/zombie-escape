@@ -1,2 +1,6 @@
+RestartIntent restart the game
+RestartIntent restart
+RestartIntent start over
+
 ExitRoomIntent exit the room
 ExitRoomIntent leave the room
